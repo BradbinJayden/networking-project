@@ -7,7 +7,6 @@ C:\Users\Admin\Downloads\Classes\Portfolio\NetworkingProject\NetworkingProject\o
 C:\Users\Admin\Downloads\Classes\Portfolio\NetworkingProject\NetworkingProject\obj\Debug\net10.0\BankClient.AssemblyInfoInputs.cache
 C:\Users\Admin\Downloads\Classes\Portfolio\NetworkingProject\NetworkingProject\obj\Debug\net10.0\BankClient.AssemblyInfo.cs
 C:\Users\Admin\Downloads\Classes\Portfolio\NetworkingProject\NetworkingProject\obj\Debug\net10.0\BankClient.csproj.CoreCompileInputs.cache
-C:\Users\Admin\Downloads\Classes\Portfolio\NetworkingProject\NetworkingProject\obj\Debug\net10.0\BankClient.sourcelink.json
 C:\Users\Admin\Downloads\Classes\Portfolio\NetworkingProject\NetworkingProject\obj\Debug\net10.0\BankClient.dll
 C:\Users\Admin\Downloads\Classes\Portfolio\NetworkingProject\NetworkingProject\obj\Debug\net10.0\refint\BankClient.dll
 C:\Users\Admin\Downloads\Classes\Portfolio\NetworkingProject\NetworkingProject\obj\Debug\net10.0\BankClient.pdb

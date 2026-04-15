@@ -2,7 +2,6 @@ C:\Users\Admin\Downloads\Classes\Portfolio\NetworkingProject\BankServer\obj\Debu
 C:\Users\Admin\Downloads\Classes\Portfolio\NetworkingProject\BankServer\obj\Debug\net10.0\BankServer.AssemblyInfoInputs.cache
 C:\Users\Admin\Downloads\Classes\Portfolio\NetworkingProject\BankServer\obj\Debug\net10.0\BankServer.AssemblyInfo.cs
 C:\Users\Admin\Downloads\Classes\Portfolio\NetworkingProject\BankServer\obj\Debug\net10.0\BankServer.csproj.CoreCompileInputs.cache
-C:\Users\Admin\Downloads\Classes\Portfolio\NetworkingProject\BankServer\obj\Debug\net10.0\BankServer.sourcelink.json
 C:\Users\Admin\Downloads\Classes\Portfolio\NetworkingProject\BankServer\bin\Debug\net10.0\BankServer.exe
 C:\Users\Admin\Downloads\Classes\Portfolio\NetworkingProject\BankServer\bin\Debug\net10.0\BankServer.deps.json
 C:\Users\Admin\Downloads\Classes\Portfolio\NetworkingProject\BankServer\bin\Debug\net10.0\BankServer.runtimeconfig.json

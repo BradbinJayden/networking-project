@@ -37,8 +37,12 @@ public class SocketClient
                 {
                     string input = null;
                     string[] response = null;
+
                     int bytesRec;
                     int bytesSent;
+
+                    bool loggedIn = false;
+                    string accountNumber = null;
 
                     Console.Write("[L]ogin or [S]ignup : ");
                     input = Console.ReadLine().ToUpper();
@@ -48,16 +52,61 @@ public class SocketClient
                     if (input == "L")
                     {
                         Console.Write("Enter account number: ");
-                        string accountNumber = Console.ReadLine();
+                        accountNumber = Console.ReadLine();
 
                         Console.Write("Enter password: ");
                         string password = Console.ReadLine();
 
-                        response = Send(sender, $"LOGIN|{accountNumber}|{password}");
-                        
+                        response = Send(sender, $"LOGIN|{accountNumber}|{password}");            
+
                         if (response[0] == "SUCCESS")
                         {
-                            Console.WriteLine("Welcome, {0}!", response[1]);
+                            Console.WriteLine("-------------------------------");
+                            Console.WriteLine("Login successful! Account: {0}, Balance: {1}", response[1], response[2]);
+                            
+                            accountNumber = response[1];
+                            loggedIn = true;
+
+                            while(loggedIn)
+                            {
+                                Console.WriteLine("-------------------------------");
+                                response = null;
+                                Console.WriteLine("[D]eposit, [W]ithdraw, [T]ransfer, [B]alance, [L]ogout");
+
+                                input = Console.ReadLine().ToUpper();
+
+                                if (input == "D")
+                                {
+                                    Console.WriteLine("Please write in provided format below.");
+                                    Console.WriteLine("ChequeNumber|Amount");
+                                    Console.Write("");
+                                    string details = Console.ReadLine();
+                                    response = Send(sender, $"DEPOSIT|{accountNumber}|{details}");
+                                    Console.WriteLine(response[0]);
+
+                                }
+
+                                else if (input == "W")
+                                {
+                                    Console.WriteLine("Withdrawl Amount");
+                                    Console.Write("$");
+                                    string amount = Console.ReadLine();
+                                    response = Send(sender, $"WITHDRAW|{amount}");
+                                    Console.WriteLine(response[0]);
+                                    Console.WriteLine("remaining balance: " + response[1]);
+                                }
+                                else if (input == "B")
+                                {
+                                    response = Send(sender, $"BALANCE|{accountNumber}");
+                                    Console.WriteLine(response[0]);
+                                    Console.WriteLine("Current balance: {0}", response[1]);
+                                }
+                                else if (input == "L")
+                                {
+                                    loggedIn = false;
+                                    Console.WriteLine("Logged out.");
+                                }
+                            }
                         }
                         else
                         {
