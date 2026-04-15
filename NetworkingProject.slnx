@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="BankServer/BankServer.csproj" />
+  <Project Path="NetworkingProject/BankClient.csproj" />
+</Solution>

@@ -1,0 +1,14 @@
+﻿[
+	{
+		"AccountNumber": "123456789",
+		"Password": "test",
+		"ReferenceNumber": "AA1BB2C",
+		"Balance": 10.00
+	},
+	{
+		"AccountNumber": "987654321",
+		"Password": "abc456",
+		"ReferenceNumber": "B7X3R1Q",
+		"Balance": 500.00
+	}
+]

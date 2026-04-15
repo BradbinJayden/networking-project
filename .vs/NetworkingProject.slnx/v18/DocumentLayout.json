@@ -1,0 +1,194 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Admin\\Downloads\\Classes\\Portfolio\\NetworkingProject\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9D2724E3-67A9-6622-001C-FEAAAF1092F7}|BankServer\\BankServer.csproj|c:\\users\\admin\\downloads\\classes\\portfolio\\networkingproject\\bankserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D2724E3-67A9-6622-001C-FEAAAF1092F7}|BankServer\\BankServer.csproj|solutionrelative:bankserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{95700EF8-F1B0-5D06-DBEB-4258631462B5}|NetworkingProject\\BankClient.csproj|c:\\users\\admin\\downloads\\classes\\portfolio\\networkingproject\\networkingproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{95700EF8-F1B0-5D06-DBEB-4258631462B5}|NetworkingProject\\BankClient.csproj|solutionrelative:networkingproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D2724E3-67A9-6622-001C-FEAAAF1092F7}|BankServer\\BankServer.csproj|c:\\users\\admin\\downloads\\classes\\portfolio\\networkingproject\\bankserver\\accounts.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9D2724E3-67A9-6622-001C-FEAAAF1092F7}|BankServer\\BankServer.csproj|solutionrelative:bankserver\\accounts.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D2724E3-67A9-6622-001C-FEAAAF1092F7}|BankServer\\BankServer.csproj|c:\\users\\admin\\downloads\\classes\\portfolio\\networkingproject\\bankserver\\accounts.json||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{9D2724E3-67A9-6622-001C-FEAAAF1092F7}|BankServer\\BankServer.csproj|solutionrelative:bankserver\\accounts.json||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 24,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{4a9b7e51-aa16-11d0-a8c5-00a0c921a4d2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:11:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:10:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:9:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:8:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:7:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:3:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:2:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:6:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:5:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:4:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\Classes\\Portfolio\\NetworkingProject\\BankServer\\Program.cs",
+              "RelativeDocumentMoniker": "BankServer\\Program.cs",
+              "ToolTip": "C:\\Users\\Admin\\Downloads\\Classes\\Portfolio\\NetworkingProject\\BankServer\\Program.cs",
+              "RelativeToolTip": "BankServer\\Program.cs",
+              "ViewState": "AgIAAFkAAAAAAAAAAIAwwGUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-15T02:08:47.676Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\Classes\\Portfolio\\NetworkingProject\\NetworkingProject\\Program.cs",
+              "RelativeDocumentMoniker": "NetworkingProject\\Program.cs",
+              "ToolTip": "C:\\Users\\Admin\\Downloads\\Classes\\Portfolio\\NetworkingProject\\NetworkingProject\\Program.cs",
+              "RelativeToolTip": "NetworkingProject\\Program.cs",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAAwIQAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-15T01:55:35.967Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "accounts.json",
+              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\Classes\\Portfolio\\NetworkingProject\\BankServer\\accounts.json",
+              "RelativeDocumentMoniker": "BankServer\\accounts.json",
+              "ToolTip": "C:\\Users\\Admin\\Downloads\\Classes\\Portfolio\\NetworkingProject\\BankServer\\accounts.json",
+              "RelativeToolTip": "BankServer\\accounts.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-04-15T04:06:10.441Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "accounts.json",
+              "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\Classes\\Portfolio\\NetworkingProject\\BankServer\\accounts.json",
+              "RelativeDocumentMoniker": "BankServer\\accounts.json",
+              "ToolTip": "C:\\Users\\Admin\\Downloads\\Classes\\Portfolio\\NetworkingProject\\BankServer\\accounts.json",
+              "RelativeToolTip": "BankServer\\accounts.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-04-15T04:11:09.943Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

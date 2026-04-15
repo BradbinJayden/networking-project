@@ -1,0 +1,15 @@
+C:\Users\Admin\Downloads\Classes\Portfolio\NetworkingProject\NetworkingProject\bin\Debug\net10.0\BankClient.exe
+C:\Users\Admin\Downloads\Classes\Portfolio\NetworkingProject\NetworkingProject\bin\Debug\net10.0\BankClient.deps.json
+C:\Users\Admin\Downloads\Classes\Portfolio\NetworkingProject\NetworkingProject\bin\Debug\net10.0\BankClient.runtimeconfig.json
+C:\Users\Admin\Downloads\Classes\Portfolio\NetworkingProject\NetworkingProject\bin\Debug\net10.0\BankClient.dll
+C:\Users\Admin\Downloads\Classes\Portfolio\NetworkingProject\NetworkingProject\bin\Debug\net10.0\BankClient.pdb
+C:\Users\Admin\Downloads\Classes\Portfolio\NetworkingProject\NetworkingProject\obj\Debug\net10.0\BankClient.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Downloads\Classes\Portfolio\NetworkingProject\NetworkingProject\obj\Debug\net10.0\BankClient.AssemblyInfoInputs.cache
+C:\Users\Admin\Downloads\Classes\Portfolio\NetworkingProject\NetworkingProject\obj\Debug\net10.0\BankClient.AssemblyInfo.cs
+C:\Users\Admin\Downloads\Classes\Portfolio\NetworkingProject\NetworkingProject\obj\Debug\net10.0\BankClient.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Downloads\Classes\Portfolio\NetworkingProject\NetworkingProject\obj\Debug\net10.0\BankClient.sourcelink.json
+C:\Users\Admin\Downloads\Classes\Portfolio\NetworkingProject\NetworkingProject\obj\Debug\net10.0\BankClient.dll
+C:\Users\Admin\Downloads\Classes\Portfolio\NetworkingProject\NetworkingProject\obj\Debug\net10.0\refint\BankClient.dll
+C:\Users\Admin\Downloads\Classes\Portfolio\NetworkingProject\NetworkingProject\obj\Debug\net10.0\BankClient.pdb
+C:\Users\Admin\Downloads\Classes\Portfolio\NetworkingProject\NetworkingProject\obj\Debug\net10.0\BankClient.genruntimeconfig.cache
+C:\Users\Admin\Downloads\Classes\Portfolio\NetworkingProject\NetworkingProject\obj\Debug\net10.0\ref\BankClient.dll
