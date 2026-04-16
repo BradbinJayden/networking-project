@@ -47,8 +47,9 @@ public class SocketClient
                     Console.Write("[L]ogin or [S]ignup : ");
                     input = Console.ReadLine().ToUpper();
                     Send(sender, input);
-       
+
                     // Login
+                    Console.WriteLine("-------------------------------");
                     if (input == "L")
                     {
                         Console.Write("Enter account number: ");
@@ -80,37 +81,82 @@ public class SocketClient
                                     Console.WriteLine("Please write in provided format below.");
                                     Console.WriteLine("ChequeNumber|Amount");
                                     Console.Write("");
+                                    
                                     string details = Console.ReadLine();
                                     response = Send(sender, $"DEPOSIT|{accountNumber}|{details}");
-                                    Console.WriteLine(response[0]);
+                                    
+                                    if (response[0] == "ERROR")
+                                    {
+                                        Console.WriteLine($"{response[0]}, {response[1]}");
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine(response[0]);
+                                    }
 
                                 }
-
                                 else if (input == "W")
                                 {
                                     Console.WriteLine("Withdrawl Amount");
                                     Console.Write("$");
+                                    
                                     string amount = Console.ReadLine();
-                                    response = Send(sender, $"WITHDRAW|{amount}");
-                                    Console.WriteLine(response[0]);
-                                    Console.WriteLine("remaining balance: " + response[1]);
+                                    response = Send(sender, $"WITHDRAW|{accountNumber}|{amount}");
+                                    
+                                    if (response[0] == "ERROR")
+                                    {
+                                        Console.WriteLine($"{response[0]}, {response[1]}");
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine(response[0]);
+                                    }
                                 }
                                 else if (input == "B")
                                 {
                                     response = Send(sender, $"BALANCE|{accountNumber}");
+
+                                    if (response[0] == "ERROR")
+                                    {
+                                        Console.WriteLine($"{response[0]}, {response[1]}");
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine($"{ response[0]}, Balance: {response[1]}");
+                                    }
+                                }
+                                else if (input == "T")
+                                {
+                                    Console.WriteLine("Please write in provided format below.");
+                                    Console.WriteLine("RecipientAccountNumber|Amount");
+                                    Console.Write("");
+                                    
+                                    string details = Console.ReadLine();
+                                    
+                                    response = Send(sender, $"TRANSFER|{accountNumber}|{details}");
+                                    
                                     Console.WriteLine(response[0]);
-                                    Console.WriteLine("Current balance: {0}", response[1]);
+
+                                    if (response[0] == "ERROR")
+                                    {
+                                        Console.WriteLine($"{response[0]}, {response[1]}");
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine($"{response[0]}, Balance: {response[1]}");
+                                    }
                                 }
                                 else if (input == "L")
                                 {
                                     loggedIn = false;
+                                    accountNumber = null;
                                     Console.WriteLine("Logged out.");
                                 }
                             }
                         }
                         else
                         {
-                            Console.WriteLine("Login failed: {0}", response[0]);
+                            Console.WriteLine("Login failed: {0}, {1}", response[0], response[1]);
                         }
                     }
 
@@ -123,7 +169,18 @@ public class SocketClient
                         Console.Write("Choose a password: ");
                         string password = Console.ReadLine();
 
-                        input = $"CREATE|{refNumber}|{password}";
+                        response = Send(sender, $"SIGNUP|{refNumber}|{password}");
+
+                        if (response[0] == "SUCCESS")
+                        {
+                            Console.WriteLine("Account created successfully!");
+                            Console.WriteLine("Account Number  : " + response[1]);
+                            Console.WriteLine("Reference Number: " + response[2]);
+                        }
+                        else
+                        {
+                            Console.WriteLine("Signup failed: " + response[1]);
+                        }
                     }
 
                     // Kill

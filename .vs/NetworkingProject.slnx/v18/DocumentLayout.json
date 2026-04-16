@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\Admin\\Downloads\\Classes\\Portfolio\\NetworkingProject\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9D2724E3-67A9-6622-001C-FEAAAF1092F7}|BankServer\\BankServer.csproj|c:\\users\\admin\\downloads\\classes\\portfolio\\networkingproject\\bankserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{9D2724E3-67A9-6622-001C-FEAAAF1092F7}|BankServer\\BankServer.csproj|solutionrelative:bankserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{95700EF8-F1B0-5D06-DBEB-4258631462B5}|NetworkingProject\\BankClient.csproj|c:\\users\\admin\\downloads\\classes\\portfolio\\networkingproject\\networkingproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{95700EF8-F1B0-5D06-DBEB-4258631462B5}|NetworkingProject\\BankClient.csproj|solutionrelative:networkingproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9D2724E3-67A9-6622-001C-FEAAAF1092F7}|BankServer\\BankServer.csproj|c:\\users\\admin\\downloads\\classes\\portfolio\\networkingproject\\bankserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9D2724E3-67A9-6622-001C-FEAAAF1092F7}|BankServer\\BankServer.csproj|solutionrelative:bankserver\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 24,
+          "SelectedChildIndex": 25,
           "Children": [
             {
               "$type": "Bookmark",
@@ -118,26 +118,26 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\Classes\\Portfolio\\NetworkingProject\\BankServer\\Program.cs",
               "RelativeDocumentMoniker": "BankServer\\Program.cs",
               "ToolTip": "C:\\Users\\Admin\\Downloads\\Classes\\Portfolio\\NetworkingProject\\BankServer\\Program.cs",
               "RelativeToolTip": "BankServer\\Program.cs",
-              "ViewState": "AgIAAIkAAAAAAAAAAAAmwJ0AAAA4AAAAAAAAAA==",
+              "ViewState": "AgIAABUBAAAAAAAAAAAwwDsBAABMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-15T04:58:52.33Z",
+              "WhenOpened": "2026-04-16T01:07:16.368Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Downloads\\Classes\\Portfolio\\NetworkingProject\\NetworkingProject\\Program.cs",
               "RelativeDocumentMoniker": "NetworkingProject\\Program.cs",
               "ToolTip": "C:\\Users\\Admin\\Downloads\\Classes\\Portfolio\\NetworkingProject\\NetworkingProject\\Program.cs",
               "RelativeToolTip": "NetworkingProject\\Program.cs",
-              "ViewState": "AgIAAJkAAAAAAAAAAAAmwEsAAABFAAAAAAAAAA==",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAYwO4AAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-15T01:55:35.967Z",
               "EditorCaption": ""

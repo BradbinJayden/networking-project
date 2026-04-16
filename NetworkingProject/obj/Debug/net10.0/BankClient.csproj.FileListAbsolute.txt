@@ -12,3 +12,4 @@ C:\Users\Admin\Downloads\Classes\Portfolio\NetworkingProject\NetworkingProject\o
 C:\Users\Admin\Downloads\Classes\Portfolio\NetworkingProject\NetworkingProject\obj\Debug\net10.0\BankClient.pdb
 C:\Users\Admin\Downloads\Classes\Portfolio\NetworkingProject\NetworkingProject\obj\Debug\net10.0\BankClient.genruntimeconfig.cache
 C:\Users\Admin\Downloads\Classes\Portfolio\NetworkingProject\NetworkingProject\obj\Debug\net10.0\ref\BankClient.dll
+C:\Users\Admin\Downloads\Classes\Portfolio\NetworkingProject\NetworkingProject\obj\Debug\net10.0\BankClient.sourcelink.json

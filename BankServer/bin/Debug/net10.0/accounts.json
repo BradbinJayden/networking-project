@@ -3,6 +3,36 @@
     "AccountNumber": "123456789",
     "Password": "admin",
     "ReferenceNumber": "AAA0001",
-    "Balance": 1500
+    "Balance": 1447
+  },
+  {
+    "AccountNumber": "724383947",
+    "Password": "Test",
+    "ReferenceNumber": "H779O18",
+    "Balance": 3000
+  },
+  {
+    "AccountNumber": "667074706",
+    "Password": "admin2",
+    "ReferenceNumber": "CDZVTU4",
+    "Balance": 11933
+  },
+  {
+    "AccountNumber": "747618068",
+    "Password": "admin3",
+    "ReferenceNumber": "XGC85UF",
+    "Balance": 0
+  },
+  {
+    "AccountNumber": "868971495",
+    "Password": "admin3",
+    "ReferenceNumber": "QMCHJM4",
+    "Balance": 0
+  },
+  {
+    "AccountNumber": "365335265",
+    "Password": "admin4",
+    "ReferenceNumber": "0RUCYHU",
+    "Balance": 0
   }
 ]

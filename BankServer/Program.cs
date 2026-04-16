@@ -1,9 +1,7 @@
 ﻿using System.Net;
 using System.Net.Sockets;
-using System.Security.Principal;
 using System.Text;
 using System.Text.Json;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 public class SocketListener
 {
@@ -32,7 +30,6 @@ public class SocketListener
             IPEndPoint localEP = new IPEndPoint(ip, 10001);
 
             Socket listener = new Socket(ip.AddressFamily, SocketType.Stream, ProtocolType.Tcp);
-
             listener.Bind(localEP);
             listener.Listen(10);
 
@@ -43,19 +40,18 @@ public class SocketListener
                 Socket handler = listener.Accept();
                 Console.WriteLine("Client connected.");
                 Console.WriteLine("------------------------------");
+
                 while (true)
                 {
                     string data = "";
                     byte[] bytes = null;
                     string response = null;
-                    
 
                     while (true)
                     {
                         bytes = new byte[1024];
                         int bytesRec = handler.Receive(bytes);
 
-                        // Disconnect
                         if (bytesRec == 0)
                         {
                             Console.WriteLine("Client disconnected.");
@@ -71,73 +67,266 @@ public class SocketListener
                             break;
                         }
                     }
-                    
-                    if (Receieved(data)[0] == "LOGIN") 
+
+                    if (data == "") break;
+
+                    Console.WriteLine("Received: {0}", data);
+
+                    string[] parts = Receieved(data);
+                    string command = parts[0];
+
+                    // LOGIN
+                    if (command == "LOGIN")
                     {
-                        Console.WriteLine(data);
-                        Account account = accounts.FirstOrDefault(a => a.AccountNumber == Receieved(data)[1] && a.Password == Receieved(data)[2]);
-                        if (account != null)
+                        if (!HasParts(parts, 3))
                         {
-                            response = "SUCCESS|" + account.AccountNumber + "|" + account.Balance;
+                            response = "ERROR|Invalid command format.";
                         }
                         else
                         {
-                            response = "FAILURE";
+                            string accountNumber = parts[1];
+                            string password = parts[2];
+
+                            if (!IsValid(accountNumber, password))
+                            {
+                                response = "ERROR|Invalid or missing fields.";
+                            }
+                            else
+                            {
+                                Account account = accounts.FirstOrDefault(a => a.AccountNumber == accountNumber && a.Password == password);
+                               
+                                if (account != null)
+                                {
+                                    response = $"SUCCESS|{account.AccountNumber}|{account.Balance}";
+                                }
+                                else
+                                {
+                                    response = "ERROR|Invalid account number or password.";
+                                }
+                            }
                         }
                     }
 
-                    else if (Receieved(data)[0] == "DEPOSIT")
+                    // SIGNUP
+                    else if (command == "SIGNUP")
                     {
-                        Console.WriteLine(data);
-                        string accountNumber = Receieved(data)[1];
-                        string chequeNumber = Receieved(data)[2];
-                        double amount = double.Parse(Receieved(data)[3]);
-
-                        Account account = accounts.FirstOrDefault(a => a.AccountNumber == accountNumber);
-
-                        if (account == null)
+                        if (!HasParts(parts, 3))
                         {
-                            response = "ERROR|Account not found.";
-                        }
-                        else if (amount <= 0)
-                        {
-                            response = "ERROR|Deposit amount must be greater than zero.";
+                            response = "ERROR|Invalid command format.";
                         }
                         else
                         {
-                            account.Balance += amount;
-                            SaveAccounts(accounts);
-                            response = $"SUCCESS|Deposit complete.|{account.Balance}";
+                            string referenceNumber = parts[1];
+                            string password = parts[2];
+
+                            if (!IsValid(referenceNumber, password))
+                            {
+                                response = "ERROR|Invalid or missing fields.";
+                            }
+                            else
+                            {
+                                Account existing = accounts.FirstOrDefault(a => a.ReferenceNumber == referenceNumber);
+
+                                if (existing == null)
+                                {
+                                    response = "ERROR|Invalid reference number.";
+                                }
+                                else
+                                {
+                                    string newAccountNumber;
+                                    do { newAccountNumber = new Random().Next(100000000, 999999999).ToString(); }
+                                    while (accounts.Any(a => a.AccountNumber == newAccountNumber));
+
+                                    string newReferenceNumber;
+                                    do { newReferenceNumber = GenerateCode(7); }
+                                    while (accounts.Any(a => a.ReferenceNumber == newReferenceNumber));
+
+                                    accounts.Add(new Account
+                                    {
+                                        AccountNumber = newAccountNumber,
+                                        Password = password,
+                                        ReferenceNumber = newReferenceNumber,
+                                        Balance = 0.00
+                                    });
+
+                                    SaveAccounts(accounts);
+                                    response = $"SUCCESS|{newAccountNumber}|{newReferenceNumber}";
+                                }
+                            }
                         }
                     }
 
-                    else if (Receieved(data)[0] == "BALANCE")
+                    // DEPOSIT
+                    else if (command == "DEPOSIT")
                     {
-                        Console.WriteLine(data);
-                        string accountNumber = Receieved(data)[1];
-
-                        Account account = accounts.FirstOrDefault(a => a.AccountNumber == accountNumber);
-
-                        if (account == null)
+                        if (!HasParts(parts, 4))
                         {
-                            response = "ERROR|Account not found.";
+                            response = "ERROR|Invalid command format.";
                         }
-                        else if (account.Balance == null)
+                        else if (!double.TryParse(parts[3], out double amount))
                         {
-                            response = "ERROR|Error fetching balance.";
+                            response = "ERROR|Amount must be a valid number.";
                         }
                         else
                         {
-                            response = $"SUCCESS|{account.Balance}";
+                            string accountNumber = parts[1];
+                            string chequeNumber = parts[2];
+
+                            if (!IsValid(accountNumber, chequeNumber, parts[3]))
+                            {
+                                response = "ERROR|Invalid or missing fields.";
+                            }
+                            else if (chequeNumber.Length != 6)
+                            {
+                                response = "ERROR|Cheque number must be 6 characters.";
+                            }
+                            else
+                            {
+                                Account account = accounts.FirstOrDefault(a => a.AccountNumber == accountNumber);
+                                
+                                if (account == null)
+                                {
+                                    response = "ERROR|Account not found.";
+                                }
+                                else
+                                {
+                                    account.Balance += amount;
+                                    SaveAccounts(accounts);
+                                    response = $"SUCCESS|Deposit complete.|{account.Balance}";
+                                }
+                            }
                         }
                     }
 
-                    Console.WriteLine("Received : {0}", data);
+                    // BALANCE
+                    else if (command == "BALANCE")
+                    {
+                        if (!HasParts(parts, 2))
+                        {
+                            response = "ERROR|Invalid command format.";
+                        }
+                        else
+                        {
+                            string accountNumber = parts[1];
+
+                            if (!IsValid(accountNumber))
+                            {
+                                response = "ERROR|Invalid or missing fields.";
+                            }
+                            else
+                            {
+                                Account account = accounts.FirstOrDefault(a => a.AccountNumber == accountNumber);
+                                
+                                if (account != null)
+                                {
+                                    response = $"SUCCESS|{account.Balance}";
+                                }
+                                else
+                                {
+                                    response = "ERROR|Account not found.";
+                                }
+                            }
+                        }
+                    }
+
+                    // WITHDRAW
+                    else if (command == "WITHDRAW")
+                    {
+                        if (!HasParts(parts, 3))
+                        {
+                            response = "ERROR|Invalid command format.";
+                        }
+                        else if (!double.TryParse(parts[2], out double amount))
+                        {
+                            response = "ERROR|Amount must be a valid number.";
+                        }
+                        else
+                        {
+                            string accountNumber = parts[1];
+
+                            if (!IsValid(accountNumber, parts[2]))
+                            {
+                                response = "ERROR|Invalid or missing fields.";
+                            }
+                            else
+                            {
+                                Account account = accounts.FirstOrDefault(a => a.AccountNumber == accountNumber);
+                                if (account == null)
+                                    response = "ERROR|Account not found.";
+                                else if (amount > account.Balance)
+                                    response = "ERROR|Insufficient funds.";
+                                else
+                                {
+                                    account.Balance -= amount;
+                                    SaveAccounts(accounts);
+                                    response = $"SUCCESS|Withdrawal complete.|{account.Balance}";
+                                }
+                            }
+                        }
+                    }
+
+                    // TRANSFER
+                    else if (command == "TRANSFER")
+                    {
+                        if (!HasParts(parts, 4))
+                        {
+                            response = "ERROR|Invalid command format.";
+                        }
+                        else if (!double.TryParse(parts[3], out double amount))
+                        {
+                            response = "ERROR|Amount must be a valid number.";
+                        }
+                        else
+                        {
+                            string accountNumber = parts[1];
+                            string recipientAccountNumber = parts[2];
+
+                            if (!IsValid(accountNumber, recipientAccountNumber, parts[3]))
+                            {
+                                response = "ERROR|Invalid or missing fields.";
+                            }
+                            
+                            else
+                            {
+                                Account account = accounts.FirstOrDefault(a => a.AccountNumber == accountNumber);
+                                Account recipient = accounts.FirstOrDefault(a => a.AccountNumber == recipientAccountNumber);
+
+                                if (account == null)
+                                {
+                                    response = "ERROR|Account not found.";
+
+                                }
+
+                                else if (recipient == null)
+                                {
+                                    response = "ERROR|Recipient account not found.";
+                                }
+
+                                else if (amount > account.Balance)
+                                {
+                                    response = "ERROR|Insufficient funds.";
+
+                                }
+
+                                else
+                                {
+                                    account.Balance -= amount;
+                                    recipient.Balance += amount;
+                                    SaveAccounts(accounts);
+                                    response = $"SUCCESS|{account.Balance}";
+                                }
+                            }
+                        }
+                    }
+
+                    else
+                    {
+                        response = "ERROR|Unknown command.";
+                    }
 
                     byte[] msg = Encoding.ASCII.GetBytes(response + "<EOF>");
                     handler.Send(msg);
                 }
-
             }
         }
         catch (Exception e)
@@ -146,9 +335,47 @@ public class SocketListener
         }
     }
 
+    static bool HasParts(string[] parts, int expected)
+    {
+        return parts.Length >= expected;
+    }
+
     static string[] Receieved(string command)
     {
+        if (string.IsNullOrEmpty(command))
+        {
+            return new string[] { "ERROR", "No command received." };
+
+        }
+
         return command.Split('|');
+    }
+
+    static bool IsValid(params object[] values)
+    {
+        foreach (object value in values)
+        {
+            if (value == null) return false;
+
+            if (value is string s)
+            {
+                if (string.IsNullOrWhiteSpace(s)) return false;
+
+                if (double.TryParse(s, out double parsed))
+                    if (parsed <= 0) return false;
+            }
+        }
+        return true;
+    }
+
+    static string GenerateCode(int length)
+    {
+        string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        Random random = new Random();
+        string result = "";
+        for (int i = 0; i < length; i++)
+            result += chars[random.Next(chars.Length)];
+        return result;
     }
 
     private static List<Account> LoadAccounts()
@@ -158,7 +385,6 @@ public class SocketListener
             Console.WriteLine("No Account Data Found!");
             return new List<Account>();
         }
-
         string json = File.ReadAllText("accounts.json");
         return JsonSerializer.Deserialize<List<Account>>(json);
     }
